@@ -64,3 +64,71 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+# AaronBlanco_Prueba_Back
+
+## Descripción
+
+Este es un proyecto API desarrollado en Laravel como parte de la prueba técnica de Firetensor. La API permite la gestión de productos y usuarios, incluyendo la creación, consulta, actualización y eliminación (CRUD). Además, cuenta con protección mediante autenticación con Laravel Sanctum y validaciones de entrada de datos.
+
+## Instrucciones para correr el proyecto
+
+1. Clona el repositorio desde GitHub:
+
+   ```bash
+   git clone https://github.com/AaronAlonsoBlancoRamirez/AaronBlanco_Prueba_Back.git
+
+2. Dirígete al directorio del proyecto:
+
+    cd AaronBlanco_Prueba_Back
+
+3. Instala las dependencias con Composer:
+
+    composer install
+
+4. Crea un archivo .env basado en .env.example y configura la base de datos:
+
+    cp .env.example .env
+
+5. Genera una clave de aplicación:
+
+    php artisan key:generate
+
+6. Ejecuta las migraciones:
+
+    php artisan migrate
+
+7. Inicia el servidor local:
+
+   php artisan serve
+
+El proyecto debería estar disponible en http://127.0.0.1:8000.
+   
+Explicación de cómo implementar el principio SOLID
+Este proyecto sigue algunos de los principios SOLID para garantizar un código de calidad:
+
+Single Responsibility Principle (SRP): Cada clase tiene una única responsabilidad. Por ejemplo, los controladores de usuarios y productos gestionan exclusivamente sus respectivas funcionalidades.
+Open/Closed Principle (OCP): El código está abierto a la extensión pero cerrado a la modificación, especialmente al agregar nuevas funcionalidades en controladores separados.
+Interface Segregation Principle (ISP): Aunque este proyecto no utiliza interfaces explícitas, las responsabilidades están claramente separadas entre controladores y modelos.
+Instrucciones sobre cómo probar los endpoints
+Gestión de usuarios
+GET /api/users: Devuelve todos los usuarios.
+POST /api/users: Crea un nuevo usuario.
+Parámetros requeridos:
+name: Nombre del usuario.
+email: Correo electrónico.
+password: Contraseña.
+Gestión de productos
+GET /api/products: Devuelve todos los productos.
+POST /api/products: Crea un nuevo producto.
+Parámetros requeridos:
+name: Nombre del producto.
+price: Precio del producto.
+quantity: Cantidad del producto.
+Autenticación
+POST /api/login: Inicia sesión y devuelve un token de autenticación.
+Parámetros requeridos:
+email: Correo electrónico.
+password: Contraseña.
+
